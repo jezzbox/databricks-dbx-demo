@@ -1,0 +1,12 @@
+build:
+  no_build: true
+environments:
+  default:
+    workflows:
+      - name: "dbx-demo-job"
+        permissions:
+          access_control_list:
+            - user_name: "jeremy.keelty@queryclick.com"
+              permission_level: "IS_OWNER"
+        spark_python_task:
+          python_file: "file://dbx-demo-job.py"
